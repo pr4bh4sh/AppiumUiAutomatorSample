@@ -21,7 +21,7 @@ public class AppiumTest {
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
-        String apkPath = Paths.get(System.getProperty("user.dir"), "apks", "BSF-IR.apk").toString();
+        String apkPath = Paths.get(System.getProperty("user.dir"), "apks", "BSF-IR.apk.zip").toString();
 
         UiAutomator2Options options = new UiAutomator2Options()
                 .setUdid("emulator-5554")
@@ -33,7 +33,7 @@ public class AppiumTest {
 
         // Initialize the AndroidDriver
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(40));
     }
 
     @Test
